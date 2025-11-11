@@ -1,0 +1,54 @@
+# 1. Buat folder baru dan masuk ke dalamnya
+mkdir proyek-git-saya
+cd proyek-git-saya
+
+# 2. Inisialisasi repository Git baru
+git init
+> Initialized empty Git repository in /path/to/proyek-git-saya/.git/
+
+# --- COMMIT 1 ---
+# Buat file pertama, misalnya README.md
+echo "# Proyek Git Saya" > README.md
+
+# Tambahkan file ke staging area
+git add README.md
+
+# Buat commit pertama
+git commit -m "Initial commit: Tambah file README.md"
+> [main (root-commit) 1a2b3c4] Initial commit: Tambah file README.md
+>  1 file changed, 1 insertion(+)
+>  create mode 100644 README.md
+
+# --- COMMIT 2 ---
+# Buat file baru untuk fitur, misal index.html
+echo "<html><body>Hello World!</body></html>" > index.html
+
+# Tambahkan file ke staging area
+git add index.html
+
+# Buat commit kedua
+git commit -m "Feat: Tambah halaman index.html dasar"
+> [main 5d6e7f8] Feat: Tambah halaman index.html dasar
+>  1 file changed, 1 insertion(+)
+>  create mode 100644 index.html
+
+# --- COMMIT 3 ---
+# Edit file yang sudah ada
+echo "Ini adalah aplikasi To-Do List" >> README.md
+
+# Tambahkan perubahan ke staging area
+git add README.md
+
+# Buat commit ketiga
+git commit -m "Docs: Update deskripsi proyek di README"
+> [main 9h1i2j3] Docs: Update deskripsi proyek di README
+>  1 file changed, 1 insertion(+)
+
+# --- TAMPILKAN 3 COMMIT ---
+# Gunakan 'git log' untuk melihat riwayat commit
+git log --oneline
+
+# Output yang akan tampil (hash commit akan berbeda):
+> 9h1i2j3 (HEAD -> main) Docs: Update deskripsi proyek di README
+> 5d6e7f8 Feat: Tambah halaman index.html dasar
+> 1a2b3c4 Initial commit: Tambah file README.md
