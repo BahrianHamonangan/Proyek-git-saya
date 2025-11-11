@@ -1,0 +1,36 @@
+# Kita sekarang berada di branch 'main'
+# Output 'git status' atau 'git branch' akan menunjukkan ini
+
+# 1. Buat branch baru bernama 'fitur/tambah-css'
+#    Perintah -b artinya "buat branch baru dan langsung pindah ke sana"
+git checkout -b fitur/tambah-css
+> Switched to a new branch 'fitur/tambah-css'
+
+# 2. Buat file baru di branch ini
+echo "body { background-color: #f0f0f0; }" > style.css
+
+# 3. Add dan commit perubahan ini di branch 'fitur/tambah-css'
+git add style.css
+git commit -m "Feat: Tambah file style.css dasar"
+> [fitur/tambah-css 4k5l6m7] Feat: Tambah file style.css dasar
+>  1 file changed, 1 insertion(+)
+>  create mode 100644 style.css
+
+# 4. Pindah kembali ke branch 'main'
+git checkout main
+> Switched to branch 'main'
+# (Jika Anda cek, file 'style.css' tidak ada di sini, karena masih di branch fitur)
+
+# 5. Lakukan MERGE: Gabungkan pekerjaan dari 'fitur/tambah-css' ke 'main'
+git merge fitur/tambah-css
+> Updating 9h1i2j3..4k5l6m7
+> Fast-forward
+>  style.css | 1 +
+>  1 file changed, 1 insertion(+)
+>  create mode 100644 style.css
+
+# 6. (Opsional) Hapus branch fitur yang sudah tidak terpakai
+git branch -d fitur/tambah-css
+> Deleted branch fitur/tambah-css (was 4k5l6m7).
+
+# Sekarang branch 'main' memiliki semua kode, termasuk 'style.css'
